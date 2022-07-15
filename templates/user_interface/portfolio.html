@@ -1,0 +1,392 @@
+<!doctype html>{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600&family=Poppins:wght@200;300;400;600;800&family=Roboto&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Argon CSS -->
+    <link type="text/css" href="{% static 'portfolioCSS/css/argon-design-system.min.css' %}" rel="stylesheet">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Personal  Styling -->
+    <link rel="stylesheet" href="{% static 'portfolioCSS/css/style.css' %}">
+    
+    <title>{{  information.firstName }} {{ information.lastName }} </title>
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+
+  </head>
+  <body>
+<!-- ------------- HEADER -------------------->
+    <header class="header" id="header">
+        <nav class="nav container navbar-expand-lg">
+            <a href="#" class="nav__logo navbar-brand ml-3">
+                <img src="favicon.ico" alt="">
+                {{ user.username }}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i>{{ user.username }}
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            <i class="uil uil-user nav__icon"></i>Status
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="uil uil-file nav__icon"></i>Reviews
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#qualification" class="nav__link">
+                            <i class="uil uil-diary nav__icon"></i>Watchlist
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i>Plans
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="uil uil-message nav__icon"></i>Contact Us
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!-- THEME CHANGING BUTTONS -->
+                <i data-mode= "dark" class="uil uil-moon moon-change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<!-- ============== MAIN =============== -->
+    <main class="main">
+
+    <!-- ------------- HOME -------------------->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+
+                <div class="home__content grid">
+                    <div class="home__social">  
+                    </div>
+                </div>
+
+                <div class="home__data">
+                    <small class="home__welcome s-color"> Welcome to my ANImaker page! </small>
+                    <h1 class="home__title"> Nya^^ </h1>
+                    <h1 class="home__title"> I'm </h1>{{ user.username }}
+                    <h3 class="home__subtitle" id="home-bio">{{ information.bio }} </h3>
+                    <a href="#contact" class="button button--flex">
+                        DM Me <i class="uil uil-message button__icon"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="home__scroll">
+                <a href="#about" class="home__scroll-button button--flex">
+                    <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+                    <!-- <span class="home__scroll-name"> Scroll Down </span>
+                    <i class="uil uil-arrow-down home__scroll-arrow"></i> -->
+                </a>
+            </div>
+        </section>
+
+    <!-- ------------- ABOUT ME -------------------->
+        <section class="about section" id="about">
+            <h2 class="section__title">Status</h2>
+            <span class="section__subtitle">  </span>
+
+            <div class="about__container container grid">
+                <img src="{% static 'portfolioCSS/assets/img/1.JPG' %}" alt="my achievement photo" class="about__img">
+
+                <div class="about__data">
+                    <p class="about__description" id="home-about"> {{ information.about }}</p>
+                    
+                </div>
+
+                <!-- <div class="about__info">
+                    <div>
+                        <span class="about__info-title"> 02+ </span>
+                        <span class="about__info-name"> Years <br> Experience </span>
+                    </div>
+
+                    <div>
+                        <span class="about__info-title"> 10+ </span>
+                        <span class="about__info-name"> Completed <br> Projects </span>
+                    </div>
+
+                    <div>
+                        <span class="about__info-title"> 02+ </span>
+                        <span class="about__info-name"> Companies <br> Worked </span>
+                    </div>
+                </div> -->
+
+            </div>
+        </section>
+
+    <!-- ------------- Rev-------------------->
+        <section class="skills section" id="skills">
+            <h2 class="section__title"> Reviews </h2>
+            <span class="section__subtitle"> My anime reviews </span>
+
+            <div class="skills__container container grid">
+                <div class="row" id="skillset_container">
+                    {% for item in skillsets %}
+                    <!-- Skill {{ item.id }} -->
+                    <div class="skills__container-card">
+                        <div class="card_skill shadow2">
+                            <div class="imgBx">
+                                {{ item.title }}
+                            </div>
+                            <div class="contentBx">
+                                <h2> {{ item.title }} </h2>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}                    
+                </div>
+            </div>
+        </section>
+    <!-- ------------- Watchlist -------------------->
+        <section class="qualification section" id="qualification">
+            <h2 class="section__title"> Watchlist </h2>
+            <span class="section__subtitle"> My personal Journey </span>
+
+            <div class="qualification__container container">
+
+                <div class="row mt-lg-0">
+                   
+                    <!-- Watchlist -->
+                    <div class="col-lg-6 col-sm-10 col-md-10 mt-2 qualification__content" id="experience">
+                        <div class="qualification__button button--flex">
+                         Anime & Manga
+                        </div>
+
+                        <div id="expreience_timeline">
+                            <div class="container py-2">
+                                
+                                {% for expItem in experience %}
+                                 <!-- Timeline item {{ expItem.id }} -->
+                                 <div class="row">
+                                    <!-- Timeline design -->
+                                    <div class="col-auto text-center flex-column d-sm-flex">
+                                        <div class="row h-50 qualification__journey">
+                                            <div class="col">
+                                                <span class="qualification__line"></span>
+                                            </div>
+                                            <div class="col">&nbsp;</div>
+                                        </div>
+
+                                        <h5>
+                                            <span class="badge qualification__calendar">
+                                                <i class="uil uil-calendar-alt qualification__calendar-icon"></i>
+                                                {{ expItem.the_year }}
+                                            </span>
+                                        </h5>
+
+                                        <div class="row h-50 qualification__journey">
+                                            <div class="col">
+                                                <span class="qualification__line"></span>
+                                            </div>
+                                            <div class="col">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                    <!-- Timeline content Events -->
+                                    <div class="col py-2">
+                                        <div class="card education-card transparent_card mirror-face shadow2">
+                                            <div class="card-body">
+                                                <div class="task">
+                                                    <div class="abstract">
+                                                        <h3 class="qualification__title"> {{ expItem.title }} </h3>
+                                                        <p class="qualification__subtitle"> {{ expItem.institute }} </p>
+                                                    </div>
+                                                    <div class="details">
+                                                        <p class="qualification__subtitle">{{ expItem.description }} </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                                <!-- Timeline item end -->
+                                <div class="row">
+                                    <!-- Timeline design -->
+                                    <div class="col-auto text-center flex-column d-sm-flex">
+                                        <div class="row h-50 qualification__journey">
+                                            <div class="col">
+                                                <span class="qualification__start">
+                                                    <i class="uil uil-rocket qualification__start-icon"></i>
+                                                </span>
+                                            </div>
+                                            <div class="col">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                    <!-- Timeline content Events -->
+                                    <div class="col py-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- ------------- Plans -------------------->
+        <section class="portfolio section" id="portfolio">
+            <h2 class="section__title">My personal Anime Plans</h2>
+            <span class="section__subtitle"> And manga too </span>
+
+            <div class="blog-slider">
+                <div class="blog-slider__wrp swiper-wrapper">
+
+                    {% for projItem in projects %}
+                    <!-- For portfolio item {{ projItem.id }} -->
+                    <div class="blog-slider__item swiper-slide">
+                        <div class="blog-slider__img">
+                            <img src="{{ projItem.imagelink }}" alt="Portfolio item">
+                        </div>
+
+                        <div class="blog-slider__content">
+                            <span class="blog-slider__code"> December 2020</span>
+                            <div class="blog-slider__title"> {{ projItem.title }}</div>
+                            <div class="blog-slider__text"> {{ projItem.description }} </div>
+                            <a href="{{ projItem.demo }}" target="_blank" class="button blog-slider__button button--flex"> 
+                                Demo
+                                <i class="uil uil-play button__icon"></i>
+                            </a>
+                            <a href="{{ projItem.github_project }}" target="_blank" class="button blog-slider__button button--flex"> 
+                                Github
+                                <i class="uil uil-play button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                    
+                    <div class="blog-slider__pagination"></div>
+                </div>
+            </div>
+
+        </section>
+
+    <!-- ------------- CONTACT US -------------------->
+        <section class="contact section" id="contact">
+            <h2 class="section__title"> Dirrect Massages </h2>
+            <span class="section__subtitle"> Comming soon</span>
+
+            <div class="row mt-lg-6 justify-content-center contact_mail">
+               
+            </div>
+        </section>
+    </main>
+
+    <!-- <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div class="fom-actions">
+            <button type="submit"> SEND </button>
+        </div>
+    </form> -->
+
+<!-- ------------- FOOTER -------------------->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+
+                <div>
+                    <h1 class="footer__title"> {{ user.username }} </h1>
+                    <!-- <span class="footer__subtitle"> Electrical Engineer and Developer</span> -->
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="#about" class="footer__link">Profile</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="footer__link"> DM Me</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="{{ information.instagram }}" target="_blank" class="footer__social" id="myInstagram">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+
+                    <a href="{{ information.other }}" target="_blank" class="footer__social" id="myTwitter">
+                        <i class="uil uil-twitter-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Overwolf. All rights reserved</p>
+        </div>
+    </footer>
+  
+<input type="hidden" id="myVar" name="variable" value="{{ username }}">
+<!-- ------------- SCROLL TOP -------------------->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
+
+
+
+    <!-- Core -->
+    <script src="{% static 'portfolioCSS/js/core/jquery.min.js' %}"></script>
+    <script src="{% static 'portfolioCSS/js/core/popper.min.js' %}"></script>
+    <script src="{% static 'portfolioCSS/js/core/bootstrap.min.js' %}"></script>
+
+    <!-- Argon JS -->
+    <script src="{% static 'portfolioCSS/js/argon-design-system.js' %}"></script>
+
+    <!--  Typewriter CSS Effect -->
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Self Script -->
+    <script src="{% static 'portfolioCSS/js/script.js' %}"></script>
+    <script src="{% static 'portfolioCSS/js/portfolio_script.js' %}"></script>
+    <!-- <script>
+        document.getElementById('contact_button').onclick = alert("Your mail has been sent! Thank You");
+    </script> -->
+  </body>
+</html>

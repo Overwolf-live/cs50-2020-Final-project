@@ -1,0 +1,135 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+
+<head>
+	<title>CREATE ANIProfile</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- Material Kit CSS -->
+  <link href="{% static 'createForm/css/material-dashboard.css' %}" rel="stylesheet" />
+
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" href="{% static 'createForm/images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'createForm/vendor/bootstrap/css/bootstrap.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'createForm/fonts/font-awesome-4.7.0/css/font-awesome.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'createForm/fonts/iconic/css/material-design-iconic-font.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'createForm/vendor/animate/animate.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'createForm/vendor/css-hamburgers/hamburgers.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'createForm/vendor/animsition/css/animsition.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'createForm/vendor/select2/select2.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'createForm//daterangepicker/daterangepicker.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'createForm/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'createForm/css/main.css' %}">
+<!--===============================================================================================-->
+
+</head>
+
+<body>
+  <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="white">
+      <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+      Tip 2: you can also add an image using data-image tag
+  -->
+      <div class="logo">
+        <a href="#" class="simple-text logo-mini">
+          <small>Profile of - </small>
+          <br>
+          {{ user }} 
+        </a>
+        <a href="{% url 'logout' %}" class="btn btn-info" style="margin: 0;margin-left: 10%; "> Logout </a>
+        <!-- <div style="margin: 10%"> -->
+          
+        <!-- </div> -->
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="{% url 'information' %}">
+              <i class="material-icons">Main</i>
+              <p style="color: #fff;">Main</p>
+            </a>
+          </li>
+
+          <li class="nav-item active  ">
+            <a class="nav-link" href="{% url 'experience' %}">
+              <i class="material-icons">dashboard</i>
+              <p style="color: #fff;">Watchlist</p>
+            </a>
+          </li>
+
+          <li class="nav-item active  ">
+            <a class="nav-link" href="{% url 'project' %}">
+              <i class="material-icons">Project</i>
+              <p style="color: #fff;">Plans</p>
+            </a>
+          </li>
+
+          <li class="nav-item active  ">
+            <a class="nav-link" href="{% url 'skillset' %}">
+              <i class="material-icons">R</i>
+              <p style="color: #fff;">Reviews</p>
+            </a>
+          </li>
+          <!-- your sidebar here -->
+          <div style="margin: 10%">
+            <a href="{% url 'portfolio' user %}" class="btn btn-info nav-item active  ">My Profile </a>
+          </div>          
+      </div>
+    </div>
+    <div class="main-panel">
+      {% block body %}
+
+      {% endblock %}
+  
+<!--===============================================================================================-->
+	<script src="{% static 'createForm/vendor/jquery/jquery-3.2.1.min.js'%}"></script>
+  <!--===============================================================================================-->
+    <script src="{% static 'createForm/vendor/animsition/js/animsition.min.js'%}"></script>
+  <!--===============================================================================================-->
+    <script src="{% static 'createForm/vendor/bootstrap/js/popper.js'%}"></script>
+    <script src="{% static 'createForm/vendor/bootstrap/js/bootstrap.min.js'%}"></script>
+  <!--===============================================================================================-->
+    <script src="{% static 'createForm/vendor/select2/select2.min.js'%}"></script>
+  <!--===============================================================================================-->
+    <script src="{% static 'createForm/vendor/daterangepicker/moment.min.js'%}"></script>
+    <script src="{% static 'createForm/vendor/daterangepicker/daterangepicker.js'%}"></script>
+  <!--===============================================================================================-->
+    <script src="{% static 'createForm/vendor/countdowntime/countdowntime.js'%}"></script>
+  <!--===============================================================================================-->
+    <script src="{% static 'createForm/js/main.js'%}"></script>
+  
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-23581568-13');
+  
+  </script>
+  
+  {% block script %}
+  {% endblock %}
+  
+</body>
+
+</html>
